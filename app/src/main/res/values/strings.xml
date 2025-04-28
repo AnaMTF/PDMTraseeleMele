@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PDMTraseeleMele</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Setari Aplicatie</string>
+
+    <string name="menu_home">Acasa</string>
+    <string name="menu_traseu_nou">Traseu Nou</string>
+    <string name="menu_despre">Despre Aplicatie</string>
+    <string name="action_detalii_traseu">Detalii Traseu</string>
+</resources>
