@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import eu.ase.pdm.traseelemele.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -28,9 +30,19 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val layoutManager = LinearLayoutManager(requireContext())
+        val adaptor = TraseeAdapter(mutableListOf())
+
+        binding.rvTrasee.adapter = adaptor
+        binding.rvTrasee.layoutManager = layoutManager
+        //binding.rvTrasee.addItemDecoration() //directia delimitatorului e invers decat a viewul (dar avem card view si se ocupa el)
+
+
+        //val textView: TextView = binding.textHome
+        homeViewModel.trasee.observe(viewLifecycleOwner) {
+            //textView.text = it
+            //o metoda de tipul
+            adaptor.initTrasee(it)
         }
         return root
     }
